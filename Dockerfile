@@ -2,7 +2,7 @@
 From tomcat:8-jre8 
 
 # Maintainer 
-MAINTAINER "learningdevops.itdlu@gmail.com" 
+MAINTAINER "vinh.le00112@gmail.com" 
 
 # Copy
 COPY ./webapp.war /usr/local/tomcat/webapps
