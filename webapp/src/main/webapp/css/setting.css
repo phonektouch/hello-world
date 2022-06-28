@@ -1,0 +1,50 @@
+:root{
+    --primary-color:#3b9cff;
+    --secondary-color:#b6ddff;
+    --block-color-1: rgba(182, 221, 255,0.3);
+    --block-color-2: rgba(182, 221, 255,1);
+    --white:#ffffff;
+    --gray:#888888;
+    --primary-font:'Cabin';
+    --gradient:linear-gradient(145deg, rgba(59,156,255,1) 0%, rgba(182,221,255,1) 100%);
+}
+body{
+    font-family: var(--primary-font), sans-serif;
+    font-size: 18px;
+}
+.wrapper{
+    width: 100%;
+    background-color: var(--white);
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+section{
+    padding-top:50px;
+    padding-bottom: 50px;
+}
+section:nth-child(even){
+    background-color: var(--block-color-1);
+}
+section:nth-child(odd){
+    background-color: var(--white);
+}
+.heading{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+.heading::after{
+    position: absolute;
+    content: "";
+    width: 150px;
+    height: 3px;
+    background: var(--primary-color);
+    bottom: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+}
