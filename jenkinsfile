@@ -21,8 +21,14 @@ pipeline {
         success { 
             mail bcc: '', body: 'Xin chào, tôi là Admin của dự án ABC. Dự án ABC vừa update dữ liệu mới thành công. Nếu phát sinh lỗi vui lòng phản hồi mail này', cc: 'vinhldq@runsystem.net', from: '', replyTo: '', subject: 'Thông báo từ dự án ABC', to: 'vinh.le00112@gmail.com'
         }
+        unstable {
+            mail bcc: '', body: 'Xin chào, tôi là Admin của dự án ABC. Dự án ABC vừa update nhưng có vẻ chưa ổn định (đang chờ khắc phục).', cc: 'vinhldq@runsystem.net', from: '', replyTo: '', subject: 'Thông báo từ dự án ABC', to: 'vinh.le00112@gmail.com'
+        }
         failure { 
             mail bcc: '', body: 'Xin chào, tôi là Admin của dự án ABC. Dự án ABC vừa update dữ liệu mới không thành công.', cc: 'vinhldq@runsystem.net', from: '', replyTo: '', subject: 'Thông báo từ dự án ABC', to: 'vinh.le00112@gmail.com'
+        }
+        aborted { 
+            mail bcc: '', body: 'Xin chào, tôi là Admin của dự án ABC. Dự án ABC vừa update dữ liệu đang bị gì đó.', cc: 'vinhldq@runsystem.net', from: '', replyTo: '', subject: 'Thông báo từ dự án ABC', to: 'vinh.le00112@gmail.com'
         }
     }
 }
