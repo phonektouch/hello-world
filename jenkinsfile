@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Khởi tạo dự án'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Test dự án'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Triển khai dự án'
+            }
+        }
+    }
+    post { 
+        success { 
+            mail bcc: '', body: 'Xin chào, tôi là Admin của dự án ABC. Dự án ABC vừa update dữ liệu mới thành công. Nếu phát sinh lỗi vui lòng phản hồi mail này', cc: 'vinhldq@runsystem.net, tuntc1@runsystem.net, anhptk@runsystem.net', from: '', replyTo: '', subject: 'Thông báo từ dự án ABC', to: 'vinh.le00112@gmail.com'
+        }
+        failure { 
+            mail bcc: '', body: 'Xin chào, tôi là Admin của dự án ABC. Dự án ABC vừa update dữ liệu mới không thành công.', cc: 'vinhldq@runsystem.net, tuntc1@runsystem.net, anhptk@runsystem.net', from: '', replyTo: '', subject: 'Thông báo từ dự án ABC', to: 'vinh.le00112@gmail.com'
+        }
+    }
+}
